@@ -1,0 +1,537 @@
+
+@charset "UTF-8";
+
+html{
+  font-size: 100%;
+}
+
+body{
+  font-family: "FOT-筑紫Aオールド明朝 Pr6 M", "游明朝体", "Yu Mincho", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: lighter;
+  background: rgb(0,0,0);
+  background: linear-gradient(197deg, rgba(0,0,0,1) 66%, rgba(83,81,3,1) 76%, rgba(0,0,0,1) 88%);
+  color: white;
+}
+
+a{
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
+
+img{
+  max-width: 100%;
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  height: 100vh;
+  background-color: transparent;
+  color: white;
+  position: fixed;
+  animation-name: fadeinAnime;
+  animation-fill-mode: forwards;
+  animation-duration: 7s;
+  animation-timing-function: ease;
+  animation-delay: 0.1s;
+  animation-direction: normal;
+  z-index: 1;
+}
+
+@keyframes fadeinAnime{
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.header ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40%;
+}
+
+.header ul a{
+  color: white;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20%;
+}
+
+.header a::after{
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 0.5px;
+  background: white;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .5s;
+} 
+
+.header a:hover::after{
+  transform: scale(1, 1);
+} 
+
+.main-title{
+  font-size: 2rem;
+  font-weight: lighter;
+  padding-top: 50%;
+}
+
+.top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 10% 20%;
+  padding-top: 10%;
+}
+
+.mainvisual{
+  overflow: hidden;
+  position: relative;
+  width: 70%;
+}
+
+.mainvisual::before, .mainvisual::after{
+  animation: 2s cubic-bezier(.4, 0, .2, 1) forwards;
+  background: #000;
+  content: '';
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.mainvisual::before{
+  animation-name: mainvisual-before;
+  top: 0;
+  bottom: 50%;
+}
+
+.mainvisual::after{
+  animation-name: mainvisual-after;
+  top: 50%;
+  bottom: 0;
+}
+
+@keyframes mainvisual-before{
+  100%{
+    transform: translateX(100%);
+  }
+}
+
+@keyframes mainvisual-after{
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+.sub-title{
+  font-size: 1.8rem;
+  text-align: center;
+  padding-bottom: 3%;
+}
+
+#shop{
+  margin-top: 5%;
+}
+
+.text{
+  text-align: center;
+  line-height: 2rem;
+  margin: 7% 0;
+}
+
+.center{
+  display: flex;
+  align-items: center;
+}
+
+.center-img{
+  width: 39%;
+  margin-right: 1%;
+}
+
+#pay{
+  width: 80%;
+  padding: 10% 0;
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pay-right{
+  width: 59%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  margin-left: 1%;
+}
+
+.pay-system{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5% 0 0 1%;
+}
+
+.tax{
+  display: flex;
+  margin-top: 5%;
+}
+
+.tax p{
+  margin-right: 10px;
+}
+
+.system{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+dl{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+dl dt{
+  width: 50%;
+  margin-top: 5%;
+}
+
+dl dd{
+  width: 50%;
+  margin-top: 5%;
+}
+
+.wrap img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+} 
+
+.wrap{
+  display: flex;
+  align-items: center;
+  height: 340px;
+  overflow: hidden;
+}
+
+.slideshow{
+  display: flex;
+  animation: loop-style 40s infinite linear 1s both;
+}
+
+@keyframes loop-style{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+.content{
+  width: 300px;
+  height: 300px;
+  margin: 0 20px;
+}
+
+.slide-paused:hover .slideshow{
+  animation-play-state: paused;
+}
+
+.content-hover{
+  transition: all 0.2s;
+}
+
+.content-hover:hover{
+  transform: translateY(-20px);
+  border-radius: 0 10%;
+  box-shadow: 0 3px 10px 0 #333;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer1{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+  padding-top: 3%;
+}
+
+.footer-inner{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding: 2% 0;
+}
+
+.button{
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: transparent;
+}
+
+.btn-box{
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  font-size: 16px;
+  color: #b1fc0170;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 24px;
+  position: relative;
+  border: 2px solid #b1fc0170;
+  transition: .3s;
+}
+
+.btn-box:hover{
+  border: 2px solid transparent;
+  color: #b0fc01;
+}
+
+.btn-box:before, .btn-box:after{
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  transform: scale(0);
+  transition: .3s;
+}
+
+.btn-box:before{
+  border-bottom: 2px solid #b0fc01;
+  border-left: 2px solid #b0fc01;
+  transform-origin: 100% 0%;
+}
+
+.btn-box:after{
+  border-top: 2px solid #b0fc01;
+  border-right: 2px solid #b0fc01;
+  transform-origin: 0% 100%;
+}
+
+.btn-box:hover::after, .btn-box:hover::before{
+  transform: scale(1);
+}
+
+.inquiries{
+  display: flex;
+  flex-direction: column;
+}
+
+.stella dl{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stella dl dt{
+  width: 20%;
+}
+
+.stella dl dd{
+  width: 80%;
+}
+
+.footer-bottom{
+  text-align: center;
+  padding: 2% 0;
+}
+
+
+
+/* ここから2枚目 */
+.page2{
+  padding: 7% 0 7% 20%;
+  background-image: url("./img/IMG_3610-2.jpg");
+  background-position: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+form{
+  width: 50%;
+}
+.flex-menu p{
+  font-size: 1.5rem;
+}
+
+.flex-menu input{
+  width: 50%;
+  height: 2rem;
+  outline: none;
+}
+
+.flex-menu textarea{
+  width: 50%;
+  height: 10rem;
+  outline: none;
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-menu{
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page2-menu{
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-inner{
+  flex-direction: column;
+  margin: 7% auto;
+}
+
+.menu-inner .inner-title{
+  font-size: 3rem; 
+  font-weight: lighter;
+  margin: 0 0 7% 0;
+}
+
+.menu-inner p{
+  font-size: 1.2rem; 
+  line-height: 2rem;
+  margin: 10%;
+}
+
+.footer2{
+  text-align: center;
+  padding: 2%;
+}
+
+
+
+/* ここから3枚目 */
+#miyako{
+  height: 100vh;
+}
+
+.stella3{
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 5%;
+  padding-top: 10%;
+}
+
+.completion{
+  background-color: white;
+}
+
+.completion .inner-title{
+  font-size: 3rem;
+  color: black;
+  padding: 5% 0;
+}
+
+.completion2-button{
+  padding-bottom: 13.3%;
+}
+
+.completion-text{
+  padding: 5% 0;
+  line-height: 2rem;
+}
+
+
+@media screen and (max-width: 780px) {
+
+  .text{
+    font-size: 80%;
+  }
+
+  .main-title{
+    font-size: 1.2rem;
+  }
+
+  .sub-title{
+    font-size: 1rem;
+    margin-top: 3%;
+  }
+
+  #pay .center{
+    flex-direction: column;
+  }
+
+  .footer-inner{
+    flex-direction: column;
+  }
+
+  .menu-inner .inner-title{
+    font-size: 1.7rem;
+  }
+
+  .menu-inner p{
+    font-size: 80%;
+  }
+
+  .flex-menu{
+    flex-direction: column;
+  }
+
+  .flex-menu input, .flex-menu textarea{
+    width: 100%;
+    margin-top: 3%;
+  }
+
+  .page2-menu{
+    text-align: center;
+  }
+
+  .stella3{
+    padding-top: 20%;
+  }
+
+  .completion .inner-title{
+    font-size: 1.5rem;
+  }
+
+  .completion2-button{
+    padding-bottom: 30%;
+  }
+}
